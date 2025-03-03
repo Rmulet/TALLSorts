@@ -150,7 +150,7 @@ def run_predictions(ui, tallsorts):
     results = tallsorts.predict(ui.samples)
 
     # writing the probabilities to a CSV
-    for level in results.levels:
+    for level in [level for level in results.levels if len(results.levels[level]) > 0]:
         level_cleaned = clean_label(level)
         create_dir(f'{ui.destination}/{level_cleaned}')
         results.levels[level]['probs_raw_df'].round(3).to_csv(f'{ui.destination}/{level_cleaned}/probabilities.csv', index_label='Sample')

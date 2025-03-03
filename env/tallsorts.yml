@@ -1,8 +1,6 @@
 name: tallsortsenv
 channels:
-  - anaconda
   - bioconda
-  - defaults
   - conda-forge
 dependencies:
   - joblib=1.2.0
@@ -15,7 +13,7 @@ dependencies:
   - scipy=1.9.3
   - setuptools=65.5.0
   - umap-learn=0.5.3
-  - plotly=5.11.0
+  - plotly
   - pip:
     - conorm==1.2.0
     - pyensembl==2.2.9
